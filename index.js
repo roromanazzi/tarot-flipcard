@@ -1,9 +1,18 @@
 const frontImages = ["yellow", "blue", "red"];
-const backImages = ["lightyellow", "lightblue", "pink"];
+const backImages = [
+  "assets/drinks/elprimerodemuchos1.png",
+  "assets/drinks/elprimerodemuchos.png",
+  "assets/drinks/flordepepino1.png",
+  "assets/drinks/flordepepino.png",
+  "assets/drinks/latoxica.png",
+  "assets/drinks/latoxica1.png",
+  "assets/drinks/pollerudo.png",
+  "assets/drinks/pollerudo1.png",
+];
 
 const container = document.querySelector(".container");
 
-const totalCards = frontImages.length;
+const totalCards = backImages.length;
 
 function shuffle(arr) {
   return arr.sort(() => Math.random() - 0.5);
@@ -14,8 +23,8 @@ function flipcard(card) {
 }
 
 function createCards(cards) {
-  let frontColors = shuffle(frontImages);
-  let backColors = shuffle(backImages);
+  let frontImg = shuffle(frontImages);
+  let backImg = shuffle(backImages);
 
   for (let i = 0; i < cards; i++) {
     const card = document.createElement("div");
@@ -24,12 +33,13 @@ function createCards(cards) {
 
     const frontCard = document.createElement("div");
     frontCard.setAttribute("class", "front");
-    frontCard.style.backgroundColor = frontColors[i];
+    frontCard.style.backgroundColor = frontImg[i];
     card.appendChild(frontCard);
 
-    const backCard = document.createElement("div");
+    const backCard = document.createElement("img");
+    backCard.setAttribute("src", `${backImg[i]}`);
     backCard.setAttribute("class", "back");
-    backCard.style.backgroundColor = backColors[i];
+    backCard.style.backgroundImage = `url(${backImg[i]})`;
     card.appendChild(backCard);
 
     card.addEventListener("click", () => {
