@@ -6,10 +6,20 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-track-piece,
+*::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
 body {
   background-size: cover;
   text-align: center;
   color: white;
+  overflow-x: hidden;
 }
 
 #myVideo {
@@ -24,7 +34,7 @@ body {
 .headerContainer {
   width: 100vw;
   backdrop-filter: blur(50px);
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 20px;
 }
 
@@ -33,6 +43,7 @@ h3 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 h1 {
@@ -44,16 +55,17 @@ h3 {
 }
 
 .container {
+  gap: 20px 140px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px 0;
-  justify-content: space-around;
+  justify-content: center;
   margin: 20px 0;
+  overflow-x: hidden;
 }
 
 .card {
-  width: 140px;
-  height: 240px;
+  width: 150px;
+  height: 270px;
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
@@ -66,6 +78,8 @@ h3 {
   backface-visibility: hidden;
   border-radius: 15px;
   box-shadow: 0px 2px 6px 0px #d9d9d9;
+  background-size: cover;
+  background-position: center;
 }
 
 .back {
@@ -76,6 +90,8 @@ h3 {
   transform: rotateY(180deg);
   border-radius: 15px;
   box-shadow: 0px 2px 6px 0px #d9d9d9;
+  background-size: cover;
+  background-position: center;
 }
 
 .flipcard {

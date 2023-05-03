@@ -1,4 +1,13 @@
-const frontImages = ["yellow", "blue", "red"];
+const frontImages = [
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+  "assets/drinks/fondo.png",
+];
 const backImages = [
   "assets/drinks/elprimerodemuchos1.png",
   "assets/drinks/elprimerodemuchos.png",
@@ -32,12 +41,13 @@ function createCards(cards) {
     container.appendChild(card);
 
     const frontCard = document.createElement("div");
+    // backCard.setAttribute("src", `${frontImg[i]}`);
     frontCard.setAttribute("class", "front");
-    frontCard.style.backgroundColor = frontImg[i];
+    frontCard.style.backgroundImage = `url(${frontImg[i]})`;
     card.appendChild(frontCard);
 
-    const backCard = document.createElement("img");
-    backCard.setAttribute("src", `${backImg[i]}`);
+    const backCard = document.createElement("div");
+    // backCard.setAttribute("src", `${backImg[i]}`);
     backCard.setAttribute("class", "back");
     backCard.style.backgroundImage = `url(${backImg[i]})`;
     card.appendChild(backCard);
